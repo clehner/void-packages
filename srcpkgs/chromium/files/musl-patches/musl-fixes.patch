@@ -13,6 +13,17 @@
  /* End of x86-64 definitions                                                 */
  #elif defined(__mips__)
  #if _MIPS_SIM == _MIPS_SIM_ABI32
+@@ -1765,6 +1771,10 @@
+ /* End of s390/s390x definitions                                             */
+ #endif
+ 
++#undef stat64
++#undef fstat64
++#undef lstat64
++#undef fstatat64
+ 
+ /* After forking, we must make sure to only call system calls.               */
+ #if defined(__BOUNDED_POINTERS__)
 --- ./breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc.orig
 +++ ./breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc
 @@ -49,7 +49,7 @@
